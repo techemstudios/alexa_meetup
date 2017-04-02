@@ -1,7 +1,7 @@
 language: python
 python:
-  - '2.7'
-script: ./unittests
+- '2.7'
+script: "./unittests"
 deploy:
   provider: lambda
   function_name: meetupInfo
@@ -9,8 +9,9 @@ deploy:
   role: arn:aws:iam::980316180835:role/lambda_techem_skill
   runtime: python2.7
   handler_name: lambda_handler
-  zip: ./src
+  zip: "./src"
   access_key_id: AKIAJC4OTPBSMBJD4ZBA
   on:
     branch: master
-
+  secret_access_key:
+    secure: ooVtS6ejnKwEKIzrxMkGznp1GZU/WjzBPmPIRIDqyCkSv3DfXGJdLAVNhpeO9n/zuAYsY3FOA8+YzPk50bDk8fCmMrniyL6/0oWchxHo/hiEa6bO0Umb7anb39MxKwq5g3pMFfMG5VnLxsffiJ6umWvGfHGzDMSQ91k83TaZHnGOfiD13Tw6Oxsg57sX27zgmiz7rCZ7T0IyUpryNwS+ejehn0R05O9bELqVmXeTqNxcu+4WUbq+c1+SdfuscihrJtbaPa7XILSmzebgaRCEpxEp3B9IDCgxUxBN09/Yt68dOcKzWGfjpOuKHHbwAEeDA81PkuPzsPUKjFCs8R/Xyvf3ByHuW9vl9LoeWA2P1UPTo3OzrEYjPq6XEiW4fpDSWE5gNqbj/XpVZN9wpXtd/0tSvhqGNstAkGNxWUr+ayrFecLKWHhMDcpH2Ni0O8f9oR0kqQHENDRcHye/npGf76grOqfXEJfKzUNhMlcsCvm2b3Zf5POF+yadEAje4zasR9krx8tkHUozEh576Vd6Fkz1V/ZQARWTgYYPCqBOMfvMBVHwJTkC6Jx/5PkiBi3i8i4GQp+F4+ChlK0To9KCMmNJBla0mH5NkQjebV27qvL1xbhkpdBMonY6RJK15PMZBArv/YC0M6ns9+VzQGQvVwaKrLWzSd+XDygZRLjiAm8=
