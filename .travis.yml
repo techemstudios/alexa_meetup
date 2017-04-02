@@ -1,0 +1,16 @@
+language: python
+python:
+  - '2.7'
+script: ./unittests
+deploy:
+  provider: lambda
+  function_name: meetupInfo
+  region: us-east-1
+  role: arn:aws:iam::980316180835:role/lambda_techem_skill
+  runtime: python2.7
+  handler_name: lambda_handler
+  zip: ./src
+  access_key_id: AKIAJC4OTPBSMBJD4ZBA
+  on:
+    branch: master
+
