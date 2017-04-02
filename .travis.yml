@@ -1,6 +1,8 @@
 language: python
 python:
 - '2.7'
+env:
+  secure: pLMOD5YW5MgkHHVTltzaQIzMiwdJ5LVGwYKK865vlKREr1dxaKtUCOUv4w0mZK+MtbDFG0F8TWjOS45bKtclLte1lVhv+9I4/a54q0ykc/Dk4oO/5qtQrsNZWMsbsSOLUK64RoOzcpBD2Eq+Nz5GJmCJkQAHgYaNE29cSPFD5EiiW/9UXn7IkuA+lgYdTC/eJbmXwlAHK/BRLOIT75xzvxKk6LUf+TDXfIQBDGpnij5GIgcv51TDPzoaH7hoBp/jytcAJTGE1musQtqQfHkALw9/KhQ+a2bBQBfQg/O/dXYxtuBqtGF9mPS+blt5lsbzNEolZtTrDiBO5GgTsedIf5wbQqCl+gyvVReVITQ6TFNXi1s6Z5Rg6RIZO0l70aZkyZUCB6w21Q/fcqQiwIWdG+CjoGzWcSqObr5UMOLOPvGPipPRoYQrmZ6/elpm73h+PJXc72HllGP6jGIi0bkS2y9wQhO/h7z6nkDHgw1KpwiCsMjhsqKPBPDEmdJ8HtaB4g+1l4Etj0zvCtN1YJ2Jnw4260kEVWaQ5O5zxZPIPWTYPLhC+EXNCMP6zrF1nV3j/CWqIchclkNjaK6GOLAF6gDNrh87TFuzrJ/Lr/RTaz/S5lctGB/umUKnfnoNXr+JBFN2xJCuHjmCotTeB5tA578AvgMyt2WhyBZT9oO4TFw=
 script: "./unittests"
 deploy:
   provider: lambda
