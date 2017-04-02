@@ -4,13 +4,19 @@
       "intent": "AMAZON.HelpIntent"
     },
     {
-      "intent": "About"
-    },
-    {
-      "intent": "Contact"
-    },
-    {
       "intent": "Upcoming"
+    },
+    {
+      "slots": [
+        {
+          "name": "topic",
+          "type": "LIST_OF_TOPICS"
+        }
+      ],
+      "intent": "GetEventsByTopic"
+    },
+    {
+	"intent": "AMAZON.StopIntent"
     }
   ]
 }

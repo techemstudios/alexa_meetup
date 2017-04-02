@@ -1,17 +1,22 @@
-About About
-About Information
-About General Information
-About General Info
-About Details
-Contact Contact
-Contact Contact Us
-Contact Location
-Contact Address
-Contact Phone Number
-Contact Web Address
-Contact Email Address
 Upcoming Upcoming
 Upcoming Upcoming Events
-Upcoming Specials
 Upcoming Coming Up
 Upcoming What next
+Upcoming What's Up
+Upcoming Events coming up soon
+Upcoming Events in R V A
+Upcoming Events in Central Virginia
+Upcoming Upcoming meetups
+Upcoming Next meetups
+Upcoming Meetups coming up soon
+Upcoming Meetings comupt up soon
+Upcoming Next meetings
+GetEventsByTopic Upcoming events for {topic}
+GetEventsByTopic Events for  {topic}
+GetEventsByTopic RVA meetups for  {topic}
+GetEventsByTopic Meetups for  {topic}
+GetEventsByTopic Central virginia meetups for  {topic}
+GetEventsByTopic This week's meetups on {topic}
+GetEventsByTopic This week's events for {topic}
+AMAZON.StopIntent stop
+AMAZON.StopIntent cancel
