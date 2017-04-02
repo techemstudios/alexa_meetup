@@ -1,3 +1,4 @@
+
 echo 'Drop a Settings file.'
-echo 'MEETUP_API_KEY = "${MEETUP_API_KEY}"' > ./src/settings.py
+echo 'MEETUP_API_KEY = "$MEETUP_API_KEY"' > ./src/settings.py
 echo 'Use this script to call a python test script'
