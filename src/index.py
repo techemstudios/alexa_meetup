@@ -72,7 +72,7 @@ def speak_events(events,lookahead):
         t = events[i]['time']
         t = t/1000
         if t <= int(time.mktime((day[0],day[1],day[2] + lookahead, 23, 59, 0, 0, 0, 0))):
-            speech += '%s by %s at %s. ' % (strip_ampersand(events[i]['name']),
+            speech += '%s by %s on %s. ' % (strip_ampersand(events[i]['name']),
                                             strip_ampersand(events[i]['group']['name']),
                                             say_time(t))
             speech += "<break time='500ms' />"
