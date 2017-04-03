@@ -157,7 +157,7 @@ def on_launch(launch_request, session):
                 ", sessionId=" + session['sessionId'])
     # Dispatch to your skill's launch
     return build_response({},build_speechlet_response(
-        "RVA Meetups", "<speak>Welcome to the 4 1 1 for RVA Meetups. This skill provides information about upcoming Meetups in RVA. Learn about your meetups and all the others in Central Virginia as we work to create the Silicon Valley of the South.</speak>","",False))
+        "RVA Meetups", "<speak>Welcome to the 4 1 1 for RVA Meetups. This skill provides information about upcoming Meetups in RVA. Learn about your meetups and all the others in Central Virginia as we work to create the Silicon Valley of the South. Ask for Upcoming events to hear about meetings for today and tomorrow.</speak>","",False))
 
 
 def get_help():
