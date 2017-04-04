@@ -20,7 +20,9 @@ import time
 import datetime
 import pytz
 
-day = datetime.datetime.now(pytz.timezone('US/Eastern')).timetuple()
+# Assume tz on lambda is UTC
+day = datetime.datetime.now().timetuple()
+eastern = pytz.timezone('US/Eastern')
 key = settings.MEETUP_API_KEY
 
 
@@ -59,11 +61,12 @@ def strip_ampersand(s):
     return s.replace('&','and')
 
 def say_time(t):
-    t_struct = time.localtime(t)
-    if t_struct.tm_min == 0:
-        return time.strftime('%A %B %-d, %-I %p',time.localtime(t))
+    dt = datetime.datetime.fromtimestamp(t)
+    loc_dt = eastern.localize(dt)
+    if loc_dt.minute == 0:
+        return loc_d.strftime('%A %B %-d, %-I %p')
     else:
-        return time.strftime('%A %B %-d, %-I %M %p',time.localtime(t))
+        return loc_d.strftime('%A %B %-d, %-I %M %p')
 
 def speak_events(events,lookahead):
     speech = ''
@@ -87,7 +90,7 @@ def upcoming(intent, session):
     speech_output = ""
     should_end_session = True
 
-    speech_output = "<speak> The following meetup events are happening in Central Virginia today and tomorrow. "
+    speech_output = "<speak> The following meetup events are happening in Central Virginia very soon. "
 
     resp = urllib2.urlopen('https://api.meetup.com/find/events?radius=50&order=time&sign=true&key='+key)
 
@@ -157,7 +160,7 @@ def on_launch(launch_request, session):
                 ", sessionId=" + session['sessionId'])
     # Dispatch to your skill's launch
     return build_response({},build_speechlet_response(
-        "RVA Meetups", "<speak>Welcome to the 4 1 1 for RVA Meetups. This skill provides information about upcoming Meetups in RVA. Learn about your meetups and all the others in Central Virginia as we work to create the Silicon Valley of the South. Ask for Upcoming events to hear about meetings for today and tomorrow.</speak>","",False))
+        "RVA Meetups", "<speak>Welcome to the 4 1 1 for RVA Meetups. This skill provides information about upcoming Meetups in RVA. Learn about your meetups and all the others in Central Virginia as we work to create the Silicon Valley of the South. Ask for upcoming events to hear about meetings coming up immediately.</speak>","",False))
 
 
 def get_help():
@@ -165,7 +168,7 @@ def get_help():
     """
 
     return build_response({},build_speechlet_response(
-        "Tech Em Studios","""<speak>This skill provides some basic information about Tech Em Studios. You can ask for our location, contact info, and upcoming classes.</speak>""","",False)) 
+        "RVA Meetups","""<speak>This skill provides upcoming Meetup information. Try asking for upcming events.</speak>""","",False)) 
 
 
 def on_intent(intent_request, session):
