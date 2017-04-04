@@ -22,6 +22,7 @@ import pytz
 
 # Assume tz on lambda is UTC
 day = datetime.datetime.now().timetuple()
+utc = pytz.utc
 eastern = pytz.timezone('US/Eastern')
 key = settings.MEETUP_API_KEY
 
@@ -61,8 +62,8 @@ def strip_ampersand(s):
     return s.replace('&','and')
 
 def say_time(t):
-    utc_dt = datetime.datetime.fromtimestamp(t)
-    loc_dt = eastern.localize(utc_dt)
+    utc_dt = utc.localize(datetime.datetime.utcfromtimestamp(t))
+    loc_dt = utc_dt.astimezone(eastern)
     if loc_dt.minute == 0:
         return loc_dt.strftime('%A %B %-d, %-I %p')
     else:
