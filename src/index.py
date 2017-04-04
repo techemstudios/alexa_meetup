@@ -64,9 +64,9 @@ def say_time(t):
     dt = datetime.datetime.fromtimestamp(t)
     loc_dt = eastern.localize(dt)
     if loc_dt.minute == 0:
-        return loc_d.strftime('%A %B %-d, %-I %p')
+        return loc_dt.strftime('%A %B %-d, %-I %p')
     else:
-        return loc_d.strftime('%A %B %-d, %-I %M %p')
+        return loc_dt.strftime('%A %B %-d, %-I %M %p')
 
 def speak_events(events,lookahead):
     speech = ''
