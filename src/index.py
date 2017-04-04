@@ -61,7 +61,7 @@ def strip_ampersand(s):
     return s.replace('&','and')
 
 def say_time(t):
-    utc_dt = datetime.datetime.utcfromtimestamp(t)
+    utc_dt = datetime.datetime.fromtimestamp(t)
     loc_dt = eastern.localize(utc_dt)
     if loc_dt.minute == 0:
         return loc_dt.strftime('%A %B %-d, %-I %p')
