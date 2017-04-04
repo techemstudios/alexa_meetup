@@ -58,8 +58,8 @@ def build_response(session_attributes, speechlet_response):
     }
 
 # --------------- Helpers -----------------
-def strip_ampersand(s):
-    return s.replace('&','and')
+def strip_specials(s):
+    return s.replace('&','and').replace('/',',')
 
 def say_time(t):
     utc_dt = utc.localize(datetime.datetime.utcfromtimestamp(t))
@@ -76,8 +76,8 @@ def speak_events(events,lookahead):
         t = events[i]['time']
         t = t/1000
         if t <= int(time.mktime((day[0],day[1],day[2] + lookahead, 23, 59, 0, 0, 0, 0))):
-            speech += '%s by %s on %s. ' % (strip_ampersand(events[i]['name']),
-                                            strip_ampersand(events[i]['group']['name']),
+            speech += '%s by %s on %s. ' % (strip_specials(events[i]['name']),
+                                            strip_specials(events[i]['group']['name']),
                                             say_time(t))
             speech += "<break time='500ms' />"
     return speech
