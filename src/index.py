@@ -67,7 +67,7 @@ def say_time(t):
     if loc_dt.minute == 0:
         return loc_dt.strftime('%A %B %-d, %-I %p')
     else:
-        return loc_dt.strftime('%A %B %-d, %-I, %M %p')
+        return loc_dt.strftime('%A %B %-d, <say-as interpret-as="digits">%-I</say-as> %M %p')
 
 def speak_events(events,lookahead):
     speech = ''
