@@ -21,7 +21,7 @@ import datetime
 import pytz
 
 # Assume tz on lambda is UTC
-day = datetime.datetime.now().timetuple()
+day = datetime.datetime.now().timetuple() # probably should move into function
 utc = pytz.utc
 eastern = pytz.timezone('US/Eastern')
 key = settings.MEETUP_API_KEY
@@ -67,7 +67,7 @@ def say_time(t):
     if loc_dt.minute == 0:
         return loc_dt.strftime('%A %B %-d, %-I %p')
     else:
-        return loc_dt.strftime('%A %B %-d, %-I %M %p')
+        return loc_dt.strftime('%A %B %-d, %-I, %M %p')
 
 def speak_events(events,lookahead):
     speech = ''
